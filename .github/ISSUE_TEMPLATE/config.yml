@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 Discord de UJACKING
+    url: https://discord.gg/Gc4fhMn5bG
+    about: Únete a la comunidad para dudas rápidas, dudas de estudio y ayuda.
+  - name: 🌐 Web de recursos
+    url: https://ujacking.github.io/
+    about: Consulta las guías antes de abrir un issue.
+  - name: 📖 Cómo contribuir
+    url: https://github.com/UJACKING/ujacking.github.io/blob/main/CONTRIBUTING.md
+    about: Lee la guía de contribución antes de proponer cambios.

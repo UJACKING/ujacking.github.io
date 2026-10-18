@@ -1,0 +1,39 @@
+name: "Error en contenido"
+description: Reporta un error técnico, una errata o un dato desactualizado en una guía.
+title: "[Error] "
+labels: ["contenido"]
+body:
+  - type: input
+    id: pagina
+    attributes:
+      label: Página afectada
+      placeholder: "Ej.: Nivel 1 · Redes · Capa de transporte"
+    validations:
+      required: true
+  - type: dropdown
+    id: tipo
+    attributes:
+      label: Tipo de problema
+      options:
+        - Error técnico (el contenido es incorrecto)
+        - Errata / faltas de ortografía
+        - Dato desactualizado
+        - Comando que no funciona
+        - Problema de formato / maquetación
+        - Otro
+    validations:
+      required: true
+  - type: textarea
+    id: descripcion
+    attributes:
+      label: Descripción del problema
+      description: Explica qué está mal y, si puedes, cómo debería ser.
+    validations:
+      required: true
+  - type: textarea
+    id: propuesta
+    attributes:
+      label: Corrección propuesta
+      description: Opcional. Puedes pegar el texto o comando corregido.
+    validations:
+      required: false

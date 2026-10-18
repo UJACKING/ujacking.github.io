@@ -1,0 +1,20 @@
+# CODEOWNERS de UJACKING
+#
+# Define quién revisa automáticamente los Pull Requests.
+# Sintaxis: <patrón> <propietario(s)>
+#
+# TODO-UJACKING: sustituir por el equipo u organización reales cuando exista
+# el equipo en GitHub (por ejemplo @UJACKING/mantenedores). Mientras tanto se
+# usa la cuenta con permiso de escritura.
+
+# Revisión por defecto de todo el repositorio
+*       @UJACKING
+
+# Contenido de las guías
+/docs/  @UJACKING
+
+# Configuración del sitio y despliegue
+/mkdocs.yml             @UJACKING
+/requirements.txt       @UJACKING
+/.github/               @UJACKING
+/ci/                    @UJACKING

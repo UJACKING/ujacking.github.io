@@ -1,0 +1,202 @@
+site_name: UJACKING
+site_description: Recursos y guías gratuitas para aprender ciberseguridad desde cero. Por UJACKING.
+site_url: https://ujacking.github.io/
+repo_url: https://github.com/UJACKING/ujacking.github.io
+repo_name: UJACKING/ujacking.github.io
+edit_uri: edit/main/docs/
+docs_dir: docs
+use_directory_urls: true
+
+nav:
+  - Inicio: index.md
+  - Quiénes somos:
+      - quienes-somos/index.md
+      - Fines: quienes-somos/fines.md
+      - Contacto: quienes-somos/contacto.md
+      - Normas de comunidad: quienes-somos/normas-comunidad.md
+  - Ruta perfecta: ruta-perfecta.md
+  - Nivel 1 · Principiante:
+      - nivel-1-principiante/index.md
+      - 00 · Ética y legalidad: nivel-1-principiante/00-etica-y-legalidad.md
+      - Arquitectura de ordenadores:
+          - nivel-1-principiante/01-arquitectura-de-ordenadores/index.md
+          - Componentes del ordenador: nivel-1-principiante/01-arquitectura-de-ordenadores/01-componentes-del-ordenador.md
+          - Sistemas de numeración: nivel-1-principiante/01-arquitectura-de-ordenadores/02-sistemas-de-numeracion.md
+          - Bits, bytes y representación: nivel-1-principiante/01-arquitectura-de-ordenadores/03-bits-bytes-y-representacion.md
+          - Arranque y virtualización: nivel-1-principiante/01-arquitectura-de-ordenadores/04-arranque-y-virtualizacion.md
+      - Redes:
+          - nivel-1-principiante/02-redes/index.md
+          - Modelos OSI y TCP/IP: nivel-1-principiante/02-redes/01-modelos-osi-y-tcp-ip.md
+          - Direccionamiento IP y MAC: nivel-1-principiante/02-redes/02-direccionamiento-ip-y-mac.md
+          - Subnetting: nivel-1-principiante/02-redes/03-subnetting.md
+          - Capa de enlace: nivel-1-principiante/02-redes/04-capa-de-enlace.md
+          - Capa de red: nivel-1-principiante/02-redes/05-capa-de-red.md
+          - Capa de transporte: nivel-1-principiante/02-redes/06-capa-de-transporte.md
+          - Protocolos de aplicación: nivel-1-principiante/02-redes/07-protocolos-de-aplicacion.md
+          - Seguridad en tránsito: nivel-1-principiante/02-redes/08-seguridad-en-transito.md
+          - Dispositivos, topologías y WiFi: nivel-1-principiante/02-redes/09-dispositivos-topologias-y-wifi.md
+          - Herramientas de diagnóstico: nivel-1-principiante/02-redes/10-herramientas-de-diagnostico.md
+          - Wireshark: nivel-1-principiante/02-redes/11-wireshark.md
+      - Sistemas operativos:
+          - nivel-1-principiante/03-sistemas-operativos/index.md
+          - Linux · fundamentos: nivel-1-principiante/03-sistemas-operativos/01-linux-fundamentos.md
+          - Linux · usuarios y permisos: nivel-1-principiante/03-sistemas-operativos/02-linux-usuarios-y-permisos.md
+          - Linux · procesos, servicios y logs: nivel-1-principiante/03-sistemas-operativos/03-linux-procesos-servicios-y-logs.md
+          - Windows · básico: nivel-1-principiante/03-sistemas-operativos/04-windows-basico.md
+          - Elegir distro de hacking: nivel-1-principiante/03-sistemas-operativos/05-elegir-distro-de-hacking.md
+          - Montar Kali y Parrot: nivel-1-principiante/03-sistemas-operativos/06-montar-kali-y-parrot.md
+          - Laboratorio de red virtual: nivel-1-principiante/03-sistemas-operativos/07-laboratorio-red-virtual.md
+          - Máquinas objetivo: nivel-1-principiante/03-sistemas-operativos/08-maquinas-objetivo.md
+      - Bash:
+          - nivel-1-principiante/04-bash/index.md
+          - Terminal, shell y consola: nivel-1-principiante/04-bash/01-terminal-shell-y-consola.md
+          - Comandos esenciales: nivel-1-principiante/04-bash/02-comandos-esenciales.md
+          - Tuberías, redirecciones y filtros: nivel-1-principiante/04-bash/03-tuberias-redirecciones-y-filtros.md
+          - Scripts en Bash: nivel-1-principiante/04-bash/04-scripts-bash.md
+          - Chuleta de Bash: nivel-1-principiante/04-bash/05-chuleta-bash.md
+      - Git y GitHub:
+          - nivel-1-principiante/05-git-y-github/index.md
+          - Control de versiones: nivel-1-principiante/05-git-y-github/01-control-de-versiones.md
+          - Git básico: nivel-1-principiante/05-git-y-github/02-git-basico.md
+          - Ramas, merge y conflictos: nivel-1-principiante/05-git-y-github/03-ramas-merge-y-conflictos.md
+          - GitHub, forks y Pull Requests: nivel-1-principiante/05-git-y-github/04-github-forks-y-pull-requests.md
+          - GitHub Pages y perfil: nivel-1-principiante/05-git-y-github/05-github-pages-y-perfil.md
+      - Dónde practicar:
+          - nivel-1-principiante/06-donde-practicar/index.md
+          - TryHackMe: nivel-1-principiante/06-donde-practicar/01-tryhackme.md
+          - Hack The Box: nivel-1-principiante/06-donde-practicar/02-hack-the-box.md
+          - OverTheWire: nivel-1-principiante/06-donde-practicar/03-overthewire.md
+          - PortSwigger Web Security Academy: nivel-1-principiante/06-donde-practicar/04-portswigger-web-security-academy.md
+          - CTFs: nivel-1-principiante/06-donde-practicar/05-ctfs.md
+          - Otras plataformas: nivel-1-principiante/06-donde-practicar/06-otras-plataformas.md
+      - Primer laboratorio: nivel-1-principiante/07-primer-laboratorio.md
+      - Checklist y autoevaluación: nivel-1-principiante/08-checklist-y-autoevaluacion.md
+  - Nivel 2 · Medio:
+      - nivel-2-medio/index.md
+      - Linux avanzado y escalada de privilegios: nivel-2-medio/01-linux-avanzado-y-privesc.md
+      - Windows y Active Directory: nivel-2-medio/02-windows-y-active-directory.md
+      - Redes avanzadas y firewalls: nivel-2-medio/03-redes-avanzadas-y-firewalls.md
+      - Python para seguridad: nivel-2-medio/04-python-para-seguridad.md
+      - Nmap en profundidad: nivel-2-medio/05-nmap-en-profundidad.md
+      - Metodología de pentesting: nivel-2-medio/06-metodologia-de-pentesting.md
+      - Seguridad web y OWASP Top 10: nivel-2-medio/07-seguridad-web-y-owasp-top-10.md
+      - Burp Suite: nivel-2-medio/08-burp-suite.md
+      - Introducción a Metasploit: nivel-2-medio/09-introduccion-a-metasploit.md
+      - Criptografía aplicada: nivel-2-medio/10-criptografia-aplicada.md
+      - Forense y OSINT: nivel-2-medio/11-forense-y-osint.md
+      - Hardening básico: nivel-2-medio/12-hardening-basico.md
+  - Nivel 3 · Avanzado:
+      - nivel-3-avanzado/index.md
+      - eJPT: nivel-3-avanzado/ejpt.md
+      - CPTS: nivel-3-avanzado/cpts.md
+      - OSCP: nivel-3-avanzado/oscp.md
+      - Otras certificaciones: nivel-3-avanzado/otras-certificaciones.md
+  - Paths:
+      - paths/index.md
+      - Pentesting web: paths/pentesting-web.md
+      - Pentesting de infraestructura: paths/pentesting-de-infraestructura.md
+      - Active Directory y Red Team: paths/active-directory-y-red-team.md
+      - Blue Team y SOC: paths/blue-team-soc.md
+      - Forense digital e IR: paths/forense-digital-e-ir.md
+      - Análisis de malware e ingeniería inversa: paths/analisis-de-malware-e-ingenieria-inversa.md
+      - OSINT: paths/osint.md
+      - Cloud security: paths/cloud-security.md
+      - GRC: paths/grc.md
+      - AppSec y desarrollo seguro: paths/appsec-y-desarrollo-seguro.md
+      - Criptografía: paths/criptografia.md
+      - Cyber Threat Intelligence: paths/cyber-threat-intelligence.md
+      - Bug bounty: paths/bug-bounty.md
+      - Seguridad móvil: paths/seguridad-movil.md
+      - Hardware e IoT: paths/hardware-iot.md
+  - Empleabilidad:
+      - empleabilidad/index.md
+      - GitHub como portfolio: empleabilidad/github-como-portfolio.md
+      - Cómo hacer writeups: empleabilidad/writeups.md
+      - CV de ciberseguridad: empleabilidad/cv-de-ciberseguridad.md
+      - Perfil de LinkedIn: empleabilidad/perfil-de-linkedin.md
+      - Entrevistas: empleabilidad/entrevistas.md
+      - Portales de empleo: empleabilidad/portales-de-empleo.md
+      - Prácticas y becas: empleabilidad/practicas-y-becas.md
+  - Contribuir:
+      - contribuir/index.md
+  - Glosario: glosario.md
+
+theme:
+  name: material
+  language: es
+  logo: assets/logo.svg
+  favicon: assets/favicon.svg
+  font:
+    text: Roboto
+    code: JetBrains Mono
+  palette:
+    - scheme: slate
+      primary: black
+      accent: green
+      toggle:
+        icon: material/weather-sunny
+        name: Cambiar a modo claro
+    - scheme: default
+      primary: black
+      accent: green
+      toggle:
+        icon: material/weather-night
+        name: Cambiar a modo oscuro
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.action.edit
+    - content.tabs.link
+
+plugins:
+  - search:
+      lang: es
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+extra_css:
+  - stylesheets/extra.css
+
+extra:
+  social:
+    - icon: fontawesome/brands/discord
+      link: https://discord.gg/Gc4fhMn5bG
+    - icon: fontawesome/brands/github
+      link: https://github.com/UJACKING

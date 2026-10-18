@@ -1,0 +1,54 @@
+name: Check links
+
+# Comprobación de enlaces rotoos.
+# - Semanal (lunes a las 06:00 UTC) y manual.
+# - NO se ejecuta en pull_request: no bloquea las PR.
+# - Si encuentra fallos, abre o actualiza un issue con la etiqueta "enlace-roto".
+
+on:
+  schedule:
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  link-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Comprobar enlaces
+        id: lychee
+        uses: lycheeverse/lychee-action@v2
+        with:
+          # No falla el job aunque haya enlaces rotoos (fail: false).
+          args: >-
+            --no-progress
+            --max-retries 2
+            --accept 200,202,206,429
+            --exclude-mail
+            --exclude "^https?://127\\.0\\.0\\.1"
+            --exclude "^https?://localhost"
+            --exclude "^https?://10\\."
+            --exclude "^https?://192\\.168\\."
+            --exclude "^https?://burp"
+            --exclude "IP-del-laboratorio"
+            --exclude "tu-usuario"
+            --exclude "tuusuario"
+            --exclude "tu-dominio"
+            --exclude "usuario\\.github\\.io"
+            --exclude "example\\.com"
+            --exclude "tienda\\.com"
+            "docs/**/*.md"
+          fail: false
+
+      - name: Abrir o actualizar issue con los fallos
+        if: steps.lychee.outputs.exit_code != 0
+        uses: peter-evans/create-issue-from-file@v5
+        with:
+          title: "Enlaces rotoos detectados (revisión automática)"
+          content-filepath: ./lychee/out.md
+          labels: enlace-roto

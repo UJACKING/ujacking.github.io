@@ -1,0 +1,69 @@
+# Licencia
+
+Este proyecto usa **dos licencias** según el tipo de contenido.
+
+---
+
+## 1. Contenido → CC BY-SA 4.0
+
+Los **textos de las guías, diagramas e imágenes creadas por UJACKING**, junto con el resto de
+contenido educativo de `docs/`, se publican bajo la licencia:
+
+**Creative Commons Atribución-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)**
+
+Puedes copiar, redistribuir, adaptar y transformar el contenido, incluso con fines comerciales,
+siempre que:
+
+- **Atribuyas** la autoría a UJACKING y enlaces a <https://ujacking.github.io/>.
+- **Compartas igual**: si modificas o creas a partir del contenido, debes distribuir tu versión bajo
+  esta misma licencia.
+
+Texto completo de la licencia: <https://creativecommons.org/licenses/by-sa/4.0/legalcode.es>
+
+Copyright (c) UJACKING.
+
+---
+
+## 2. Código → MIT
+
+Los **scripts, plantillas, workflows, hojas de estilo, configuraciones y cualquier fragmento de
+código** de este repositorio se publican bajo la licencia **MIT**:
+
+```text
+MIT License
+
+Copyright (c) UJACKING
+
+Se concede permiso, libre de cargos, a cualquier persona que obtenga una copia
+de este software y de los ficheros de documentación asociados (el "Software"),
+para utilizar el Software sin restricción, incluyendo, sin limitación, los
+derechos a usar, copiar, modificar, fusionar, publicar, distribuir, sublicenciar
+y/o vender copias del Software, y a permitir a las personas a las que se les
+proporcione el Software que lo hagan, sujeto a las siguientes condiciones:
+
+El aviso de copyright anterior y este aviso de permiso se incluirán en todas
+las copias o partes sustanciales del Software.
+
+EL SOFTWARE SE PROPORCIONA "TAL CUAL", SIN GARANTÍA DE NINGÚN TIPO, EXPRESA O
+IMPLÍCITA, INCLUYENDO PERO NO LIMITADO A LAS GARANTÍAS DE COMERCIABILIDAD,
+IDONEIDAD PARA UN PROPÓSITO PARTICULAR Y NO INFRACCIÓN. EN NINGÚN CASO LOS
+AUTORES O TITULARES DEL COPYRIGHT SERÁN RESPONSABLES DE NINGUNA RECLAMACIÓN,
+DAÑO U OTRA RESPONSABILIDAD, YA SEA DERIVADA DE UN CONTRATO, AGRAVIO O DE OTRO
+MODO, QUE SURJA DE, O EN CONEXIÓN CON EL SOFTWARE O EL USO U OTROS NEGOCIOS EN
+EL SOFTWARE.
+```
+
+---
+
+!!! warning "PENDIENTE (TODO-UJACKING)"
+    La elección de licencias (CC BY-SA 4.0 para contenido y MIT para código) es una **propuesta** y
+    debe ser confirmada por la directiva de la asociación. Verificar también que es compatible con
+    las licencias de los recursos de terceros que se enlacen desde la web (los enlaces no implican
+    redistribución, pero conviene revisarlo).
+
+## Recursos de terceros
+
+Esta web **enlaza** a recursos de terceros (cursos, plataformas, documentación oficial). Los enlaces
+no implican copia ni redistribución: cada recurso mantiene su propia licencia y condiciones de uso.
+Respetar siempre los términos de cada plataforma (por ejemplo, no publicar *writeups* de máquinas
+activas cuando la plataforma lo prohíbe).

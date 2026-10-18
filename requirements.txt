@@ -1,0 +1,6 @@
+# Dependencias de la web de UJACKING
+# Versiones fijadas (probadas en la build de CI con Python 3.12).
+# NO subir a MkDocs 2.x: rompe la compatibilidad con Material.
+
+mkdocs==1.6.1
+mkdocs-material==9.7.7

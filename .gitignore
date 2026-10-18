@@ -1,0 +1,21 @@
+# Salida de la build de MkDocs
+site/
+
+# Entorno virtual de Python
+.venv/
+venv/
+
+# Caches de Python y de MkDocs
+__pycache__/
+*.py[cod]
+.cache/
+
+# Fichero de progreso interno (no debe publicarse)
+.progreso.md
+
+# Editores / sistema
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db

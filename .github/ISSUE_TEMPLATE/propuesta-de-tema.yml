@@ -1,0 +1,47 @@
+name: "Propuesta de tema"
+description: Sugiere un tema, una página o una sección nueva para la web.
+title: "[Tema] "
+labels: ["tema"]
+body:
+  - type: input
+    id: titulo
+    attributes:
+      label: Título del tema
+      placeholder: "Ej.: Introducción a contenedores Docker para laboratorios"
+    validations:
+      required: true
+  - type: dropdown
+    id: seccion
+    attributes:
+      label: ¿Dónde encajaría?
+      options:
+        - Nivel 1 · Principiante
+        - Nivel 2 · Medio
+        - Nivel 3 · Avanzado
+        - Paths
+        - Empleabilidad
+        - Quiénes somos
+        - No lo tengo claro
+    validations:
+      required: true
+  - type: textarea
+    id: descripcion
+    attributes:
+      label: Descripción del tema
+      description: ¿Qué debería cubrir la página y por qué es útil para quien empieza?
+    validations:
+      required: true
+  - type: textarea
+    id: recursos
+    attributes:
+      label: Recursos de apoyo
+      description: Enlaces gratuitos que podrían servir de base (opcional).
+    validations:
+      required: false
+  - type: checkboxes
+    id: disponibilidad
+    attributes:
+      label: Disponibilidad
+      options:
+        - label: Me ofrezco a redactar esta página.
+          required: false

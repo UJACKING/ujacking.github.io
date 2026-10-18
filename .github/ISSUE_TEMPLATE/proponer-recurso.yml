@@ -1,0 +1,83 @@
+name: "Proponer un recurso"
+description: Propón un curso, vídeo, laboratorio, plataforma o lectura para añadir a la web.
+title: "[Recurso] "
+labels: ["recurso"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ¡Gracias por proponer un recurso! Antes de enviarlo, comprueba que enlazas a un
+        **dominio raíz** y que indicas si es gratis, freemium o de pago.
+  - type: input
+    id: nombre
+    attributes:
+      label: Nombre del recurso
+      placeholder: "Ej.: Practical Networking"
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: URL
+      placeholder: "https://ejemplo.com"
+    validations:
+      required: true
+  - type: dropdown
+    id: tipo
+    attributes:
+      label: Tipo
+      options:
+        - Vídeo
+        - Curso
+        - Laboratorio / plataforma de práctica
+        - Lectura / documentación
+        - Herramienta
+    validations:
+      required: true
+  - type: dropdown
+    id: idioma
+    attributes:
+      label: Idioma
+      options:
+        - Español
+        - Inglés (EN)
+        - Otro
+    validations:
+      required: true
+  - type: dropdown
+    id: precio
+    attributes:
+      label: Precio
+      options:
+        - Gratis
+        - Freemium
+        - De pago
+    validations:
+      required: true
+  - type: dropdown
+    id: nivel
+    attributes:
+      label: Nivel recomendado
+      options:
+        - Nivel 1 · Principiante
+        - Nivel 2 · Medio
+        - Nivel 3 · Avanzado
+        - Paths (área concreta)
+    validations:
+      required: true
+  - type: textarea
+    id: por-que
+    attributes:
+      label: ¿Por qué merece la pena?
+      description: Cuéntanos brevemente qué aporta y para qué tema sirve.
+    validations:
+      required: true
+  - type: checkboxes
+    id: confirmaciones
+    attributes:
+      label: Confirmaciones
+      options:
+        - label: He comprobado que el enlace funciona.
+          required: true
+        - label: El recurso es de uso legítimo y ético.
+          required: true

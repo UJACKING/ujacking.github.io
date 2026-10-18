@@ -1,0 +1,33 @@
+name: "Enlace roto"
+description: Informa de un enlace que ya no funciona o que lleva a un sitio equivocado.
+title: "[Enlace roto] "
+labels: ["enlace-roto"]
+body:
+  - type: input
+    id: pagina
+    attributes:
+      label: Página donde está el enlace
+      placeholder: "Ej.: Nivel 1 · Subnetting"
+    validations:
+      required: true
+  - type: input
+    id: enlace
+    attributes:
+      label: Enlace roto (URL completa)
+      placeholder: "https://..."
+    validations:
+      required: true
+  - type: input
+    id: destino
+    attributes:
+      label: Enlace correcto (si lo conoces)
+      placeholder: "Déjalo en blanco si no lo sabes"
+    validations:
+      required: false
+  - type: textarea
+    id: detalle
+    attributes:
+      label: Detalles
+      description: ¿Qué has visto al hacer clic (404, dominio caído, redirección rara)?
+    validations:
+      required: false

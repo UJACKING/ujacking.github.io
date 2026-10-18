@@ -1,0 +1,5483 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Recursos y guías gratuitas para aprender ciberseguridad desde cero. Por UJACKING.">
+      
+      
+      
+        <link rel="canonical" href="https://ujacking.github.io/nivel-1-principiante/03-sistemas-operativos/04-windows-basico/">
+      
+      
+        <link rel="prev" href="../03-linux-procesos-servicios-y-logs/">
+      
+      
+        <link rel="next" href="../05-elegir-distro-de-hacking/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/favicon.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Windows · básico - UJACKING</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="green">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#windows-basico" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../../.." title="UJACKING" class="md-header__button md-logo" aria-label="UJACKING" data-md-component="logo">
+      
+  <img src="../../../assets/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            UJACKING
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Windows · básico
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="green"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="green"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/UJACKING/ujacking.github.io" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    UJACKING/ujacking.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Inicio
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../quienes-somos/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Quiénes somos
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../ruta-perfecta/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Ruta perfecta
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Nivel 1 · Principiante
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../nivel-2-medio/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Nivel 2 · Medio
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../nivel-3-avanzado/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Nivel 3 · Avanzado
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../paths/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Paths
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../empleabilidad/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Empleabilidad
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../contribuir/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Contribuir
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../glosario/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Glosario
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="UJACKING" class="md-nav__button md-logo" aria-label="UJACKING" data-md-component="logo">
+      
+  <img src="../../../assets/logo.svg" alt="logo">
+
+    </a>
+    UJACKING
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/UJACKING/ujacking.github.io" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    UJACKING/ujacking.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../quienes-somos/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiénes somos
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Quiénes somos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quienes-somos/fines/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fines
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quienes-somos/contacto/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contacto
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quienes-somos/normas-comunidad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Normas de comunidad
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ruta-perfecta/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ruta perfecta
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nivel 1 · Principiante
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Nivel 1 · Principiante
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00-etica-y-legalidad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    00 · Ética y legalidad
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../01-arquitectura-de-ordenadores/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arquitectura de ordenadores
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_3" id="__nav_4_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Arquitectura de ordenadores
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-arquitectura-de-ordenadores/01-componentes-del-ordenador/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Componentes del ordenador
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-arquitectura-de-ordenadores/02-sistemas-de-numeracion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sistemas de numeración
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-arquitectura-de-ordenadores/03-bits-bytes-y-representacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bits, bytes y representación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-arquitectura-de-ordenadores/04-arranque-y-virtualizacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arranque y virtualización
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../02-redes/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Redes
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_4" id="__nav_4_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Redes
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-redes/01-modelos-osi-y-tcp-ip/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modelos OSI y TCP/IP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-redes/02-direccionamiento-ip-y-mac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Direccionamiento IP y MAC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-redes/03-subnetting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Subnetting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-redes/04-capa-de-enlace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Capa de enlace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-redes/05-capa-de-red/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Capa de red
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-redes/06-capa-de-transporte/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Capa de transporte
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-redes/07-protocolos-de-aplicacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Protocolos de aplicación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-redes/08-seguridad-en-transito/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Seguridad en tránsito
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-redes/09-dispositivos-topologias-y-wifi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dispositivos, topologías y WiFi
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-redes/10-herramientas-de-diagnostico/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Herramientas de diagnóstico
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-redes/11-wireshark/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wireshark
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sistemas operativos
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_5" id="__nav_4_5_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Sistemas operativos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-linux-fundamentos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linux · fundamentos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-linux-usuarios-y-permisos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linux · usuarios y permisos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-linux-procesos-servicios-y-logs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linux · procesos, servicios y logs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Windows · básico
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Windows · básico
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objetivos-de-aprendizaje" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivos de aprendizaje
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requisitos-previos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Requisitos previos
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explicacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Explicación
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Explicación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#estructura-del-sistema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estructura del sistema
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usuarios-permisos-y-uac" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Usuarios, permisos y UAC
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cmd-la-consola-clasica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CMD: la consola clásica
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#powershell-la-consola-moderna" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PowerShell: la consola moderna
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-registro-de-windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        El Registro de Windows
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#servicios-y-procesos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Servicios y procesos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visor-de-eventos-event-viewer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visor de eventos (Event Viewer)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#firewall-de-windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Firewall de Windows
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejemplos-practicos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplos prácticos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejemplos prácticos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-informacion-basica-en-cmd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Información básica en CMD
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-usuarios-y-grupos-locales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Usuarios y grupos locales
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-powershell-procesos-que-mas-cpu-consumen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. PowerShell: procesos que más CPU consumen
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-consultar-un-evento-de-seguridad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Consultar un evento de seguridad
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-ver-y-ajustar-permisos-con-icacls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Ver y ajustar permisos con icacls
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#errores-comunes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Errores comunes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicios
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resumen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resumen
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Checklist
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#para-ir-mas-alla" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Para ir más allá
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#siguiente-paso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Siguiente paso
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-elegir-distro-de-hacking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Elegir distro de hacking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-montar-kali-y-parrot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Montar Kali y Parrot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-laboratorio-red-virtual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Laboratorio de red virtual
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-maquinas-objetivo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Máquinas objetivo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../04-bash/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bash
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_6" id="__nav_4_6_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Bash
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-bash/01-terminal-shell-y-consola/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Terminal, shell y consola
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-bash/02-comandos-esenciales/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Comandos esenciales
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-bash/03-tuberias-redirecciones-y-filtros/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tuberías, redirecciones y filtros
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-bash/04-scripts-bash/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scripts en Bash
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-bash/05-chuleta-bash/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chuleta de Bash
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../05-git-y-github/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Git y GitHub
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_7" id="__nav_4_7_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Git y GitHub
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-git-y-github/01-control-de-versiones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Control de versiones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-git-y-github/02-git-basico/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Git básico
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-git-y-github/03-ramas-merge-y-conflictos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ramas, merge y conflictos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-git-y-github/04-github-forks-y-pull-requests/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GitHub, forks y Pull Requests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-git-y-github/05-github-pages-y-perfil/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GitHub Pages y perfil
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../06-donde-practicar/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dónde practicar
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_8" id="__nav_4_8_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Dónde practicar
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-donde-practicar/01-tryhackme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TryHackMe
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-donde-practicar/02-hack-the-box/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hack The Box
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-donde-practicar/03-overthewire/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OverTheWire
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-donde-practicar/04-portswigger-web-security-academy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PortSwigger Web Security Academy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-donde-practicar/05-ctfs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CTFs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-donde-practicar/06-otras-plataformas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Otras plataformas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07-primer-laboratorio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Primer laboratorio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../08-checklist-y-autoevaluacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Checklist y autoevaluación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../nivel-2-medio/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nivel 2 · Medio
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Nivel 2 · Medio
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nivel-2-medio/01-linux-avanzado-y-privesc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linux avanzado y escalada de privilegios
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nivel-2-medio/02-windows-y-active-directory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Windows y Active Directory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nivel-2-medio/03-redes-avanzadas-y-firewalls/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Redes avanzadas y firewalls
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nivel-2-medio/04-python-para-seguridad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python para seguridad
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nivel-2-medio/05-nmap-en-profundidad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nmap en profundidad
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nivel-2-medio/06-metodologia-de-pentesting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Metodología de pentesting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nivel-2-medio/07-seguridad-web-y-owasp-top-10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Seguridad web y OWASP Top 10
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nivel-2-medio/08-burp-suite/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Burp Suite
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nivel-2-medio/09-introduccion-a-metasploit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introducción a Metasploit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nivel-2-medio/10-criptografia-aplicada/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Criptografía aplicada
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nivel-2-medio/11-forense-y-osint/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Forense y OSINT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nivel-2-medio/12-hardening-basico/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hardening básico
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../nivel-3-avanzado/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nivel 3 · Avanzado
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Nivel 3 · Avanzado
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nivel-3-avanzado/ejpt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    eJPT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nivel-3-avanzado/cpts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CPTS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nivel-3-avanzado/oscp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OSCP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nivel-3-avanzado/otras-certificaciones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Otras certificaciones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../paths/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Paths
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Paths
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../paths/pentesting-web/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pentesting web
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../paths/pentesting-de-infraestructura/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pentesting de infraestructura
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../paths/active-directory-y-red-team/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Active Directory y Red Team
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../paths/blue-team-soc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blue Team y SOC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../paths/forense-digital-e-ir/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Forense digital e IR
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../paths/analisis-de-malware-e-ingenieria-inversa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Análisis de malware e ingeniería inversa
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../paths/osint/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OSINT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../paths/cloud-security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cloud security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../paths/grc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GRC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../paths/appsec-y-desarrollo-seguro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AppSec y desarrollo seguro
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../paths/criptografia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Criptografía
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../paths/cyber-threat-intelligence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cyber Threat Intelligence
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../paths/bug-bounty/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bug bounty
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../paths/seguridad-movil/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Seguridad móvil
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../paths/hardware-iot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hardware e IoT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../empleabilidad/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Empleabilidad
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Empleabilidad
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../empleabilidad/github-como-portfolio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GitHub como portfolio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../empleabilidad/writeups/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cómo hacer writeups
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../empleabilidad/cv-de-ciberseguridad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CV de ciberseguridad
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../empleabilidad/perfil-de-linkedin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Perfil de LinkedIn
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../empleabilidad/entrevistas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Entrevistas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../empleabilidad/portales-de-empleo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Portales de empleo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../empleabilidad/practicas-y-becas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prácticas y becas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../contribuir/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contribuir
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Contribuir
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../glosario/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glosario
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objetivos-de-aprendizaje" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivos de aprendizaje
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requisitos-previos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Requisitos previos
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explicacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Explicación
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Explicación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#estructura-del-sistema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estructura del sistema
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usuarios-permisos-y-uac" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Usuarios, permisos y UAC
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cmd-la-consola-clasica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CMD: la consola clásica
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#powershell-la-consola-moderna" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PowerShell: la consola moderna
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-registro-de-windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        El Registro de Windows
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#servicios-y-procesos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Servicios y procesos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visor-de-eventos-event-viewer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visor de eventos (Event Viewer)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#firewall-de-windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Firewall de Windows
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejemplos-practicos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplos prácticos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejemplos prácticos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-informacion-basica-en-cmd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Información básica en CMD
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-usuarios-y-grupos-locales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Usuarios y grupos locales
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-powershell-procesos-que-mas-cpu-consumen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. PowerShell: procesos que más CPU consumen
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-consultar-un-evento-de-seguridad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Consultar un evento de seguridad
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-ver-y-ajustar-permisos-con-icacls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Ver y ajustar permisos con icacls
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#errores-comunes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Errores comunes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicios
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resumen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resumen
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Checklist
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#para-ir-mas-alla" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Para ir más allá
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#siguiente-paso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Siguiente paso
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/UJACKING/ujacking.github.io/edit/main/docs/nivel-1-principiante/03-sistemas-operativos/04-windows-basico.md" title="Editar esta página" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="windows-basico">Windows · básico<a class="headerlink" href="#windows-basico" title="Permanent link">&para;</a></h1>
+<p>Windows es el sistema operativo de escritorio más extendido del mundo y, por eso, el que más se ataca en
+las empresas. Aunque trabajarás mucho en Linux, <strong>necesitas saber moverte por Windows</strong>: sus carpetas,
+sus usuarios y permisos, la consola <strong>CMD</strong>, <strong>PowerShell</strong>, el <strong>registro</strong>, los <strong>servicios</strong>, el
+<strong>Visor de eventos</strong> y el <strong>firewall</strong>. Esta página es la base; en Nivel 2 lo llevarás hasta Active Directory.</p>
+<h2 id="objetivos-de-aprendizaje">Objetivos de aprendizaje<a class="headerlink" href="#objetivos-de-aprendizaje" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Entender la <strong>estructura del sistema</strong>: unidades, carpetas clave y variables de entorno.</li>
+<li>Distinguir cuentas locales, administradores y usuarios estándar, y cómo funciona la <strong>UAC</strong>.</li>
+<li>Entender los permisos <strong>NTFS</strong> (ACL) y aplicar los básicos con <code>icacls</code>.</li>
+<li>Moverte por <strong>CMD</strong> con órdenes fundamentales.</li>
+<li>Dar los primeros pasos con <strong>PowerShell</strong> y su filosofía de objetos.</li>
+<li>Explicar qué es el <strong>registro de Windows</strong> y para qué se usa (con aviso ético).</li>
+<li>Ver <strong>servicios</strong> y <strong>procesos</strong> (Administrador de tareas).</li>
+<li>Consultar el <strong>Visor de eventos</strong> (Event Viewer).</li>
+<li>Entender el <strong>Firewall de Windows</strong> y sus perfiles.</li>
+</ul>
+<p><strong>Tiempo estimado:</strong> 90–120 min.</p>
+<h2 id="requisitos-previos">Requisitos previos<a class="headerlink" href="#requisitos-previos" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong><a href="../01-linux-fundamentos/">01 · Linux · fundamentos</a></strong> y
+  <strong><a href="../03-linux-procesos-servicios-y-logs/">03 · Linux · procesos, servicios y logs</a></strong>: muchos conceptos
+  (permisos, procesos, servicios, logs) se entienden mejor si vienes de Linux.</li>
+<li>Un Windows al que puedas acceder (tu equipo, una VM o las máquinas de evaluación que mencionamos en la
+  <a href="../08-maquinas-objetivo/">página 08</a>).</li>
+</ul>
+<h2 id="explicacion">Explicación<a class="headerlink" href="#explicacion" title="Permanent link">&para;</a></h2>
+<h3 id="estructura-del-sistema">Estructura del sistema<a class="headerlink" href="#estructura-del-sistema" title="Permanent link">&para;</a></h3>
+<p>Windows <strong>sí</strong> usa <strong>letras de unidad</strong>, al contrario que Linux. La principal es <code>C:\</code>, donde vive el
+sistema. Las carpetas que debes conocer:</p>
+<table>
+<thead>
+<tr>
+<th>Ruta</th>
+<th>Para qué sirve</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>C:\Windows</code></td>
+<td>El sistema operativo. Aquí está <code>System32</code>, el corazón del sistema.</td>
+</tr>
+<tr>
+<td><code>C:\Windows\System32</code></td>
+<td>Programas y librerías del sistema (64 bits en Windows de 64 bits).</td>
+</tr>
+<tr>
+<td><code>C:\Windows\SysWOW64</code></td>
+<td>Librerías de 32 bits en un Windows de 64 bits.</td>
+</tr>
+<tr>
+<td><code>C:\Program Files</code></td>
+<td>Programas instalados (64 bits).</td>
+</tr>
+<tr>
+<td><code>C:\Program Files (x86)</code></td>
+<td>Programas de 32 bits.</td>
+</tr>
+<tr>
+<td><code>C:\ProgramData</code></td>
+<td>Datos de aplicaciones para todos los usuarios (oculta por defecto).</td>
+</tr>
+<tr>
+<td><code>C:\Users\Nombre</code></td>
+<td>Carpeta personal de cada usuario (<code>Documentos</code>, <code>Escritorio</code>, <code>Descargas</code>…).</td>
+</tr>
+<tr>
+<td><code>C:\Users\Nombre\AppData</code></td>
+<td>Datos de aplicaciones por usuario: <code>Roaming</code>, <code>Local</code>, <code>LocalLow</code>. Oculta.</td>
+</tr>
+<tr>
+<td><code>C:\Windows\Temp</code> y <code>%TEMP%</code></td>
+<td>Ficheros temporales.</td>
+</tr>
+<tr>
+<td><code>C:\Windows\WinSxS</code></td>
+<td>Almacén de componentes del sistema (¡no tocar a mano!).</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variables de entorno</strong> útiles (escríbelas tal cual en el Explorador o en la consola):</p>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Normalmente apunta a</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>%SystemRoot%</code></td>
+<td><code>C:\Windows</code></td>
+</tr>
+<tr>
+<td><code>%SystemDrive%</code></td>
+<td><code>C:</code></td>
+</tr>
+<tr>
+<td><code>%USERPROFILE%</code></td>
+<td><code>C:\Users\TuUsuario</code></td>
+</tr>
+<tr>
+<td><code>%TEMP%</code></td>
+<td>Carpeta temporal del usuario</td>
+</tr>
+<tr>
+<td><code>%ProgramFiles%</code></td>
+<td><code>C:\Program Files</code></td>
+</tr>
+<tr>
+<td><code>%APPDATA%</code></td>
+<td><code>...\AppData\Roaming</code></td>
+</tr>
+</tbody>
+</table>
+<p>Puedes listarlas todas en CMD con <code>set</code> o en PowerShell con <code>Get-ChildItem Env:</code>.</p>
+<h3 id="usuarios-permisos-y-uac">Usuarios, permisos y UAC<a class="headerlink" href="#usuarios-permisos-y-uac" title="Permanent link">&para;</a></h3>
+<p>Windows tiene <strong>cuentas locales</strong> (en el propio equipo) y de <strong>dominio</strong> (en una empresa, gestionadas por
+Active Directory, que verás en Nivel 2). Los tipos básicos:</p>
+<ul>
+<li><strong>Administrador:</strong> puede cambiar todo (instalar software, modificar servicios, acceder a todo).</li>
+<li><strong>Usuario estándar:</strong> puede usar el equipo pero no cambiar configuración del sistema.</li>
+<li><strong>System / Servicio local:</strong> cuentas internas con las que corren servicios del sistema.</li>
+<li><strong>Invitado (Guest):</strong> normalmente deshabilitada; nunca la actives.</li>
+</ul>
+<p>La <strong>UAC</strong> (User Account Control) es el aviso "¿Quieres permitir que esta aplicación haga cambios?" que
+salta incluso si eres administrador. Existe para que <strong>no</strong> trabajes siempre con privilegios totales: al
+confirmar, elevas el proceso concreto. Es el "equivalente" a <code>sudo</code>, pero por ventanas.</p>
+<p>Herramientas gráficas: <code>lusrmgr.msc</code> (Usuarios y grupos locales), <code>netplwiz</code> (cuentas), <code>compmgmt.msc</code>
+(Administración de equipos).</p>
+<p><strong>Permisos (ACL / NTFS):</strong> cada fichero y carpeta tiene una <strong>Lista de Control de Acceso</strong> (ACL) con
+entradas (ACE) que dicen <strong>quién</strong> puede hacer <strong>qué</strong>: <code>Full control</code>, <code>Modify</code>, <code>Read &amp; execute</code>,
+<code>Read</code>, <code>Write</code>, etc. Dos ideas clave:</p>
+<ul>
+<li>Los permisos <strong>NTFS</strong> son los que de verdad protegen un fichero.</li>
+<li>Los permisos de <strong>recurso compartido (share)</strong> solo aplican por red y actúan como un "filtro" que se
+  combina con NTFS. Son famosos los fallos por compartir con "Todos: control total".</li>
+</ul>
+<p>Comandos: <code>icacls</code> (ver y cambiar permisos), <code>takeown</code> (tomar propiedad), <code>attrib</code> (atributos oculto/solo
+lectura).</p>
+<h3 id="cmd-la-consola-clasica">CMD: la consola clásica<a class="headerlink" href="#cmd-la-consola-clasica" title="Permanent link">&para;</a></h3>
+<p><code>cmd.exe</code> es la consola de toda la vida. Menos potente que PowerShell, pero está en todas partes.</p>
+<table>
+<thead>
+<tr>
+<th>Comando</th>
+<th>Qué hace</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>dir</code></td>
+<td>Lista el contenido (<code>dir /a</code> incluye ocultos).</td>
+</tr>
+<tr>
+<td><code>cd carpeta</code> / <code>cd /d D:\ruta</code></td>
+<td>Cambia de carpeta (<code>/d</code> cambia también de unidad).</td>
+</tr>
+<tr>
+<td><code>cls</code></td>
+<td>Limpia la pantalla.</td>
+</tr>
+<tr>
+<td><code>type fichero.txt</code></td>
+<td>Muestra un fichero.</td>
+</tr>
+<tr>
+<td><code>copy</code>, <code>move</code>, <code>del</code>, <code>ren</code></td>
+<td>Copiar, mover, borrar, renombrar.</td>
+</tr>
+<tr>
+<td><code>mkdir</code>, <code>rmdir /s</code></td>
+<td>Crear y borrar carpetas (<code>/s</code> recursivo).</td>
+</tr>
+<tr>
+<td><code>where comando</code></td>
+<td>Localiza un ejecutable.</td>
+</tr>
+<tr>
+<td><code>ipconfig /all</code></td>
+<td>Configuración de red.</td>
+</tr>
+<tr>
+<td><code>ping</code>, <code>tracert</code>, <code>netstat -ano</code></td>
+<td>Diagnóstico de red (<code>-ano</code> muestra PIDs).</td>
+</tr>
+<tr>
+<td><code>systeminfo</code></td>
+<td>Información del sistema.</td>
+</tr>
+<tr>
+<td><code>tasklist</code>, <code>taskkill /PID x /F</code></td>
+<td>Ver y matar procesos.</td>
+</tr>
+<tr>
+<td><code>net user</code>, <code>net localgroup</code></td>
+<td>Gestión de usuarios y grupos locales.</td>
+</tr>
+<tr>
+<td><code>whoami /priv</code></td>
+<td>Tus privilegios actuales.</td>
+</tr>
+<tr>
+<td><code>findstr "texto" fichero</code></td>
+<td>Busca texto (como <code>grep</code>).</td>
+</tr>
+<tr>
+<td><code>comando /?</code></td>
+<td>Ayuda del comando.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="powershell-la-consola-moderna">PowerShell: la consola moderna<a class="headerlink" href="#powershell-la-consola-moderna" title="Permanent link">&para;</a></h3>
+<p>PowerShell es la consola seria de Windows. Su gran diferencia: <strong>trabaja con objetos, no con texto</strong>. Un
+comando no devuelve líneas de texto, devuelve <strong>objetos</strong> con propiedades, y puedes filtrarlos, ordenarlos
+y encadenarlos con tuberías (<code>|</code>).</p>
+<ul>
+<li>Los comandos se llaman <strong>cmdlets</strong> y tienen forma <code>Verbo-Sustantivo</code>: <code>Get-Process</code>, <code>Stop-Service</code>.</li>
+<li>Hay <strong>alias</strong> cómodos: <code>ls</code>/<code>dir</code> → <code>Get-ChildItem</code>, <code>ps</code> → <code>Get-Process</code>, <code>cat</code> → <code>Get-Content</code>.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Cmdlet</th>
+<th>Qué hace</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Get-Help&lt;cmdlet&gt;</code></td>
+<td>Ayuda (<code>-Examples</code>, <code>-Full</code>).</td>
+</tr>
+<tr>
+<td><code>Get-Command</code></td>
+<td>Lista comandos disponibles.</td>
+</tr>
+<tr>
+<td><code>Get-ChildItem</code></td>
+<td>Lista ficheros/carpetas (<code>ls</code>, <code>dir</code>).</td>
+</tr>
+<tr>
+<td><code>Get-Content</code></td>
+<td>Muestra un fichero (<code>cat</code>, <code>type</code>).</td>
+</tr>
+<tr>
+<td><code>Get-Process</code></td>
+<td>Procesos (<code>ps</code>).</td>
+</tr>
+<tr>
+<td><code>Stop-Process -Name notepad -Force</code></td>
+<td>Mata un proceso.</td>
+</tr>
+<tr>
+<td><code>Get-Service</code></td>
+<td>Servicios y su estado.</td>
+</tr>
+<tr>
+<td><code>Start-Service</code> / <code>Stop-Service</code></td>
+<td>Arrancar / parar un servicio.</td>
+</tr>
+<tr>
+<td><code>Get-LocalUser</code></td>
+<td>Usuarios locales.</td>
+</tr>
+<tr>
+<td><code>Get-EventLog</code> / <code>Get-WinEvent</code></td>
+<td>Consultar eventos.</td>
+</tr>
+<tr>
+<td><code>Get-Acl</code> / <code>Set-Acl</code></td>
+<td>Ver y definir ACL.</td>
+</tr>
+<tr>
+<td><code>Select-Object</code>, <code>Where-Object</code>, <code>Sort-Object</code></td>
+<td>Proyectar, filtrar, ordenar objetos.</td>
+</tr>
+<tr>
+<td><code>Test-NetConnection</code></td>
+<td>Diagnóstico de red (<code>tnc</code>).</td>
+</tr>
+<tr>
+<td><code>Get-NetFirewallRule</code></td>
+<td>Reglas del firewall.</td>
+</tr>
+</tbody>
+</table>
+<p>La <strong>ExecutionPolicy</strong> controla si se pueden ejecutar scripts <code>.ps1</code> (<code>Get-ExecutionPolicy</code>,
+<code>Set-ExecutionPolicy</code>). Por seguridad, Windows los bloquea por defecto.</p>
+<div class="admonition tip">
+<p class="admonition-title">Objetos, no texto</p>
+<p>Compara: en CMD <code>tasklist</code> te da texto que tendrías que "recortar". En PowerShell,
+<code>Get-Process | Where-Object CPU -gt 100 | Sort-Object CPU -Descending</code> filtra y ordena <strong>por
+propiedades reales</strong>. Esa es la gran ventaja que usarás tanto en administración como en seguridad.</p>
+</div>
+<h3 id="el-registro-de-windows">El Registro de Windows<a class="headerlink" href="#el-registro-de-windows" title="Permanent link">&para;</a></h3>
+<p>El <strong>registro</strong> es una base de datos jerárquica donde Windows y las aplicaciones guardan su
+configuración: qué programas arrancan solos, asociaciones de ficheros, configuraciones de usuario,
+servicios, drivers… Se abre con <code>regedit</code> en modo gráfico, o se consulta con <code>reg</code>.</p>
+<p><strong>Raíces (hives) principales:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Clave</th>
+<th>Contenido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>HKEY_LOCAL_MACHINE</code> (<code>HKLM</code>)</td>
+<td>Configuración del equipo (todo el sistema).</td>
+</tr>
+<tr>
+<td><code>HKEY_CURRENT_USER</code> (<code>HKCU</code>)</td>
+<td>Configuración del usuario actual.</td>
+</tr>
+<tr>
+<td><code>HKEY_CLASSES_ROOT</code> (<code>HKCR</code>)</td>
+<td>Asociaciones de ficheros y tipos.</td>
+</tr>
+<tr>
+<td><code>HKEY_USERS</code> (<code>HKU</code>)</td>
+<td>Perfiles de todos los usuarios.</td>
+</tr>
+<tr>
+<td><code>HKEY_CURRENT_CONFIG</code> (<code>HKCC</code>)</td>
+<td>Configuración de hardware actual.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Para qué se usa en seguridad (con aviso ético):</strong> los analistas miran el registro para descubrir
+<strong>persistencia de malware</strong> y cómo está configurado el sistema. Dos rutas clásicas de autorranque:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>HKLM\Software\Microsoft\Windows\CurrentVersion\Run
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>HKCU\Software\Microsoft\Windows\CurrentVersion\Run
+</span></code></pre></div>
+<p>Todo lo que esté ahí se ejecuta <strong>al iniciar sesión</strong>. Si un programa desconocido aparece en esa clave,
+es sospechoso.</p>
+<div class="admonition danger">
+<p class="admonition-title">No toques el registro a ciegas</p>
+<p>El registro <strong>no es un sitio para experimentar</strong>. Modificar o borrar claves equivocadas puede dejar
+el sistema inutilizable y, si lo haces en un equipo ajeno, es una intromisión ilegal. Si necesitas
+verlo, <strong>solo consulta</strong>. Si vas a cambiar algo en tu laboratorio, exporta antes (<code>Archivo →
+Exportar</code>) y hazlo con snapshot de la VM.</p>
+</div>
+<h3 id="servicios-y-procesos">Servicios y procesos<a class="headerlink" href="#servicios-y-procesos" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Servicios:</strong> <code>services.msc</code> (ventana) o <code>Get-Service</code> (PowerShell). Cada servicio tiene un <strong>tipo de
+  inicio</strong>: Automático, Automático (inicio retrasado), Manual o Deshabilitado. Se consulta por línea de
+  comandos con <code>sc query</code>, <code>sc qc nombre</code> (configuración).</li>
+<li><strong>Procesos:</strong> el <strong>Administrador de tareas</strong> (<span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-escape">Esc</kbd></span>) es tu vista rápida. Pestañas útiles:
+  <em>Procesos</em> (CPU, memoria, disco, red), <em>Rendimiento</em> (gráficas), <em>Detalles</em> (PID y usuario),
+  <em>Inicio</em> (qué arranca con Windows), <em>Servicios</em>, y en versiones modernas <em>Usuarios</em>.</li>
+</ul>
+<p>Ruta de oro para investigar: mira primero la columna de <strong>CPU</strong> y <strong>Red</strong> ordenada, y en <em>Detalles</em> cruza
+el <strong>PID</strong> con <code>netstat -ano</code> para saber qué proceso tiene qué conexión abierta.</p>
+<h3 id="visor-de-eventos-event-viewer">Visor de eventos (Event Viewer)<a class="headerlink" href="#visor-de-eventos-event-viewer" title="Permanent link">&para;</a></h3>
+<p>El Visor de eventos (<code>eventvwr.msc</code>) es el "log central" de Windows. Los registros principales son:</p>
+<table>
+<thead>
+<tr>
+<th>Registro</th>
+<th>Qué contiene</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Aplicación</code></td>
+<td>Eventos de programas.</td>
+</tr>
+<tr>
+<td><code>Seguridad</code></td>
+<td>Inicios de sesión, cambios de cuentas, uso de privilegios.</td>
+</tr>
+<tr>
+<td><code>Sistema</code></td>
+<td>Eventos del sistema operativo y controladores.</td>
+</tr>
+<tr>
+<td><code>Windows PowerShell</code></td>
+<td>Registro de actividad de PowerShell.</td>
+</tr>
+</tbody>
+</table>
+<p>Cada evento tiene nivel (<strong>Information</strong>, <strong>Warning</strong>, <strong>Error</strong>, <strong>Critical</strong>) y un <strong>ID</strong> que identifica
+qué pasó. IDs de la vida real que conviene conocer:</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>4624</code></td>
+<td>Inicio de sesión correcto.</td>
+</tr>
+<tr>
+<td><code>4625</code></td>
+<td>Inicio de sesión <strong>fallido</strong>.</td>
+</tr>
+<tr>
+<td><code>4672</code></td>
+<td>Se asignaron privilegios especiales (típico de <code>root</code>/admin).</td>
+</tr>
+<tr>
+<td><code>4720</code> / <code>4726</code></td>
+<td>Cuenta de usuario creada / eliminada.</td>
+</tr>
+<tr>
+<td><code>4688</code></td>
+<td>Se creó un proceso (si está activada la auditoría).</td>
+</tr>
+<tr>
+<td><code>7045</code></td>
+<td>Se instaló un servicio nuevo (muy relevante en persistencia).</td>
+</tr>
+<tr>
+<td><code>1102</code></td>
+<td>Se borró el registro de seguridad (¡bandera roja!).</td>
+</tr>
+</tbody>
+</table>
+<p>Filtrar por ID es la mitad del trabajo: en <code>Get-WinEvent</code> se hace con <code>-FilterXPath</code> o <code>-FilterHashtable</code>.</p>
+<h3 id="firewall-de-windows">Firewall de Windows<a class="headerlink" href="#firewall-de-windows" title="Permanent link">&para;</a></h3>
+<p>El <strong>Firewall de Windows Defender</strong> filtra el tráfico de red. Se gestiona en <code>wf.msc</code> (Firewall de Windows
+con seguridad avanzada) o por consola. Tiene <strong>tres perfiles</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Perfil</th>
+<th>Cuándo se aplica</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Dominio</strong></td>
+<td>El equipo está en el dominio de la empresa (gestionado por el administrador).</td>
+</tr>
+<tr>
+<td><strong>Privada</strong></td>
+<td>Red doméstica/oficina de confianza.</td>
+</tr>
+<tr>
+<td><strong>Pública</strong></td>
+<td>Redes públicas (cafeterías, aeropuertos): la más estricta.</td>
+</tr>
+</tbody>
+</table>
+<p>Cada regla es de <strong>entrada (inbound)</strong> o <strong>salida (outbound)</strong> y permite o bloquea. Por defecto, Windows
+bloquea bastante entrada y permite casi toda salida.</p>
+<table>
+<thead>
+<tr>
+<th>Comando</th>
+<th>Qué hace</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>netsh advfirewall show allprofiles</code></td>
+<td>Ver estado de los perfiles.</td>
+</tr>
+<tr>
+<td><code>netsh advfirewall firewall show rule name=all</code></td>
+<td>Ver todas las reglas.</td>
+</tr>
+<tr>
+<td><code>New-NetFirewallRule -DisplayName "web" -Direction Inbound -Protocol TCP -LocalPort 80 -Action Allow</code></td>
+<td>Crear una regla (PowerShell, requiere admin).</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Abrir puertos sin pensar</p>
+<p>Cada puerto abierto es una puerta más. Abre solo lo estrictamente necesario, limita el <strong>ámbito</strong>
+(que la regla aplique solo a una IP/subred) y recuerda que en un laboratorio <strong>no</strong> debes exponer
+nada a Internet (lo veremos en la <a href="../07-laboratorio-red-virtual/">página 07</a>).</p>
+</div>
+<h2 id="ejemplos-practicos">Ejemplos prácticos<a class="headerlink" href="#ejemplos-practicos" title="Permanent link">&para;</a></h2>
+<h3 id="1-informacion-basica-en-cmd">1. Información básica en CMD<a class="headerlink" href="#1-informacion-basica-en-cmd" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>whoami
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>hostname
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>systeminfo | findstr /C:"OS Name" /C:"OS Version"
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>desktop\lucia
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>WIN-LAB01
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>OS Name:                   Microsoft Windows 11 Pro
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>OS Version:                10.0.22631 N/A Build 22631
+</span></code></pre></div>
+<p><em>(salida de ejemplo)</em> <code>whoami</code> da DOMINIO\usuario (o EQUIPO\usuario si es cuenta local). El <code>| findstr</code>
+filtra las líneas que nos interesan, igual que <code>grep</code> en Linux.</p>
+<h3 id="2-usuarios-y-grupos-locales">2. Usuarios y grupos locales<a class="headerlink" href="#2-usuarios-y-grupos-locales" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>net user
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>net localgroup administradores
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Cuentas de usuario de \\WIN-LAB01
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>-------------------------------------------------------------------------------
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>Administrador  DefaultAccount  invitado  lucia
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>El comando se ha completado correctamente.
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>Alias local     administradores
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>Miembros
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>-------------------------------------------------------------------------------
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>Administrador
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>lucia
+</span></code></pre></div>
+<p><em>(salida de ejemplo)</em> El nombre del grupo de administradores cambia según el <strong>idioma</strong> del sistema
+(<code>administradores</code> en español, <code>Administrators</code> en inglés). Comprueba siempre cuál es el tuyo.</p>
+<h3 id="3-powershell-procesos-que-mas-cpu-consumen">3. PowerShell: procesos que más CPU consumen<a class="headerlink" href="#3-powershell-procesos-que-mas-cpu-consumen" title="Permanent link">&para;</a></h3>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nb">Get-Process</span> <span class="p">|</span> <span class="nb">Sort-Object</span> <span class="n">CPU</span> <span class="n">-Descending</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">-First</span> <span class="n">5</span> <span class="n">Name</span><span class="p">,</span> <span class="n">Id</span><span class="p">,</span> <span class="n">CPU</span>
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>Name        Id       CPU
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>----        --       ---
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>firefox     5120    142,31
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>MsMpEng     2101     87,44
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>explorer    4020     33,10
+</span></code></pre></div>
+<p><em>(salida de ejemplo)</em> Ordenamos objetos por la propiedad <code>CPU</code> y proyectamos solo tres columnas. Fíjate
+en la diferencia con CMD: aquí no "cortamos texto", seleccionamos <strong>propiedades de objetos</strong>.</p>
+<h3 id="4-consultar-un-evento-de-seguridad">4. Consultar un evento de seguridad<a class="headerlink" href="#4-consultar-un-evento-de-seguridad" title="Permanent link">&para;</a></h3>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nb">Get-WinEvent</span> <span class="n">-FilterHashtable</span> <span class="p">@{</span><span class="n">LogName</span><span class="p">=</span><span class="s1">'Security'</span><span class="p">;</span> <span class="n">Id</span><span class="p">=</span><span class="n">4625</span><span class="p">}</span> <span class="n">-MaxEvents</span> <span class="n">3</span>
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>TimeCreated           Id LevelDisplayName Message
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>-----------           -- ---------------- -------
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>12/10/2026 13:40:01 4625 Information      Error de inicio de sesión: cuenta desconocida...
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>12/10/2026 13:39:58 4625 Information      Error de inicio de sesión: contraseña incorrecta...
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>12/10/2026 13:39:55 4625 Information      Error de inicio de sesión: cuenta desconocida...
+</span></code></pre></div>
+<p><em>(salida de ejemplo)</em> Tres <code>4625</code> seguidos en segundos: patrón típico de intento de fuerza bruta. Requiere
+permisos de administrador para leer el registro de Seguridad.</p>
+<h3 id="5-ver-y-ajustar-permisos-con-icacls">5. Ver y ajustar permisos con <code>icacls</code><a class="headerlink" href="#5-ver-y-ajustar-permisos-con-icacls" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>icacls C:\Users\lucia\Documentos\proyecto
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>icacls C:\Users\lucia\Documentos\proyecto /grant lucia:(OI)(CI)F
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>C:\Users\lucia\Documentos\proyecto WIN-LAB01\lucia:(OI)(CI)(F)
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>                                    BUILTIN\Administradores:(OI)(CI)(F)
+</span></code></pre></div>
+<p><em>(salida de ejemplo)</em> <code>(OI)</code> y <code>(CI)</code> significan que el permiso se <strong>hereda</strong> a ficheros y subcarpetas;
+<code>(F)</code> es control total. El segundo comando <strong>concede</strong> control total a <code>lucia</code>, heredable.</p>
+<h2 id="errores-comunes">Errores comunes<a class="headerlink" href="#errores-comunes" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Error</th>
+<th>Por qué ocurre</th>
+<th>Solución</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Access is denied</code></td>
+<td>No eres administrador o falta UAC.</td>
+<td>Abre la consola "como administrador" (botón derecho).</td>
+</tr>
+<tr>
+<td>Confundir permisos de <em>share</em> y NTFS</td>
+<td>Se combinan; el más restrictivo manda.</td>
+<td>Revisa <strong>ambos</strong> con <code>icacls</code> y las propiedades del recurso compartido.</td>
+</tr>
+<tr>
+<td>Ejecutar <code>.ps1</code> y no funciona</td>
+<td>La ExecutionPolicy los bloquea.</td>
+<td>Cámbiala para la sesión; entiende <strong>por qué</strong> existe antes.</td>
+</tr>
+<tr>
+<td>Tocar el registro "para optimizar"</td>
+<td>Se rompe el sistema.</td>
+<td>Solo consulta; exporta antes y trabaja en una VM.</td>
+</tr>
+<tr>
+<td>No ver ficheros/carpetas</td>
+<td>Están <strong>ocultos</strong>.</td>
+<td>Activa "elementos ocultos" o usa <code>dir /a</code> / <code>-Force</code>.</td>
+</tr>
+<tr>
+<td>Puertos abiertos "temporalmente"</td>
+<td>Quedan siempre.</td>
+<td>Revisa reglas con <code>Get-NetFirewallRule</code>; elimina lo que no uses.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="ejercicios">Ejercicios<a class="headerlink" href="#ejercicios" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Reconocimiento local.</strong> En CMD, obtén el nombre del equipo, el usuario actual y la versión de
+   Windows en tres comandos.</li>
+<li><strong>Usuarios.</strong> Lista las cuentas locales y averigua quién está en el grupo de administradores.</li>
+<li><strong>PowerShell.</strong> Muestra los 5 servicios que están <strong>detenidos</strong>.</li>
+<li><strong>Eventos.</strong> Localiza el último <strong>inicio de sesión correcto</strong> y el último <strong>fallido</strong> en el Visor de
+   eventos, indicando su ID y hora.</li>
+<li><strong>Firewall.</strong> Comprueba el estado de los tres perfiles del firewall y explica cuál se aplicaría en una
+   red pública.</li>
+<li><strong>Permisos.</strong> Crea una carpeta, quita el acceso a "Todos" y concédelo solo a tu usuario con <code>icacls</code>.</li>
+</ol>
+<details class="success">
+<summary>Solución</summary>
+<ol>
+<li><code>hostname</code>, <code>whoami</code>, <code>systeminfo | findstr /C:"OS Name" /C:"OS Version"</code>.</li>
+<li><code>net user</code> y <code>net localgroup administradores</code> (o <code>Administrators</code> si el sistema está en inglés).</li>
+<li><code>Get-Service | Where-Object Status -eq "Stopped" | Select-Object -First 5</code>.</li>
+<li>En <code>eventvwr.msc</code> → Registros de Windows → Seguridad → <em>Filtrar registro actual</em> por ID <code>4624</code>
+   (correcto) y <code>4625</code> (fallido). Por consola: <code>Get-WinEvent -FilterHashtable @{LogName='Security';Id=4624} -MaxEvents 1</code>.</li>
+<li><code>netsh advfirewall show allprofiles</code>: los tres perfiles deben aparecer sin conexiones bloqueadas
+   arbitrariamente. En una red pública se aplica el perfil <strong>Público</strong>, el más restrictivo.</li>
+<li><code>icacls C:\ruta\carpeta /inheritance:r</code> (quita herencia), <code>icacls C:\ruta\carpeta /remove "Todos"</code>
+   (o <code>Everyone</code>) y <code>icacls C:\ruta\carpeta /grant TuUsuario:(OI)(CI)F</code>.</li>
+</ol>
+</details>
+<h2 id="resumen">Resumen<a class="headerlink" href="#resumen" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Windows usa <strong>letras de unidad</strong>; las carpetas clave son <code>C:\Windows\System32</code>, <code>Program Files</code>,
+  <code>ProgramData</code> y <code>C:\Users</code>.</li>
+<li>Las cuentas pueden ser <strong>administrador</strong> o <strong>usuario estándar</strong>; la <strong>UAC</strong> evita privilegios
+  permanentes.</li>
+<li>Los permisos son <strong>ACL NTFS</strong>; los de recurso compartido se combinan con ellos.</li>
+<li><strong>CMD</strong> para lo clásico; <strong>PowerShell</strong> trabaja con <strong>objetos</strong> y tiene cmdlets <code>Verbo-Sustantivo</code>.</li>
+<li>El <strong>registro</strong> guarda configuración y claves de autorranque (persistencia); no se toca a ciegas.</li>
+<li>Servicios y procesos se ven en <code>services.msc</code> y el <strong>Administrador de tareas</strong>.</li>
+<li>El <strong>Visor de eventos</strong> es el log central; IDs como <code>4624</code>, <code>4625</code> y <code>7045</code> son lectura obligada.</li>
+<li>El <strong>Firewall de Windows</strong> tiene tres perfiles y reglas de entrada/salida.</li>
+</ul>
+<h2 id="checklist">Checklist<a class="headerlink" href="#checklist" title="Permanent link">&para;</a></h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Localizo <code>System32</code>, <code>Program Files</code>, <code>ProgramData</code> y las carpetas de usuario.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Distingo administrador, usuario estándar y entiendo qué hace la UAC.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Leo y modifico permisos básicos con <code>icacls</code>.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Me manejo con los comandos esenciales de CMD.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Entiendo la filosofía de objetos de PowerShell y uso varios cmdlets.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Sé qué es el registro y por qué no se toca a ciegas.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Veo servicios y procesos y su relación con la red.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Navego por el Visor de eventos y filtro por ID.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Explico los tres perfiles del firewall y sus reglas.</li>
+</ul>
+<h2 id="para-ir-mas-alla">Para ir más allá<a class="headerlink" href="#para-ir-mas-alla" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Recurso</th>
+<th>Tipo</th>
+<th>Idioma</th>
+<th>Precio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://learn.microsoft.com">Documentación de Microsoft Learn</a></td>
+<td>Documentación oficial de Windows/PowerShell</td>
+<td>Multi</td>
+<td>Gratis</td>
+</tr>
+<tr>
+<td><a href="https://github.com">GitHub</a></td>
+<td>Scripts y recursos de la comunidad</td>
+<td>Multi</td>
+<td>Gratis</td>
+</tr>
+<tr>
+<td><a href="https://tryhackme.com">TryHackMe</a></td>
+<td>Salas con Windows y Active Directory</td>
+<td>EN</td>
+<td>Freemium</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Recursos en inglés</p>
+<p>La mejor documentación de Windows está en inglés. Acostúmbrate desde ya: en ciberseguridad es la
+norma.</p>
+</div>
+<h2 id="siguiente-paso">Siguiente paso<a class="headerlink" href="#siguiente-paso" title="Permanent link">&para;</a></h2>
+<p>Ya conoces los dos sistemas. Ahora decide <strong>desde dónde</strong> vas a atacar:
+<strong><a href="../05-elegir-distro-de-hacking/">05 · Elegir distro de hacking</a></strong>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Pie" >
+        
+          
+          <a href="../03-linux-procesos-servicios-y-logs/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Linux · procesos, servicios y logs">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                Linux · procesos, servicios y logs
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../05-elegir-distro-de-hacking/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: Elegir distro de hacking">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Siguiente
+              </span>
+              <div class="md-ellipsis">
+                Elegir distro de hacking
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://discord.gg/Gc4fhMn5bG" target="_blank" rel="noopener" title="discord.gg" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M492.5 69.8c-.2-.3-.4-.6-.8-.7-38.1-17.5-78.4-30-119.7-37.1-.4-.1-.8 0-1.1.1s-.6.4-.8.8c-5.5 9.9-10.5 20.2-14.9 30.6-44.6-6.8-89.9-6.8-134.4 0-4.5-10.5-9.5-20.7-15.1-30.6-.2-.3-.5-.6-.8-.8s-.7-.2-1.1-.2C162.5 39 122.2 51.5 84.1 69c-.3.1-.6.4-.8.7C7.1 183.5-13.8 294.6-3.6 404.2c0 .3.1.5.2.8s.3.4.5.6c44.4 32.9 94 58 146.8 74.2.4.1.8.1 1.1 0s.7-.4.9-.7c11.3-15.4 21.4-31.8 30-48.8.1-.2.2-.5.2-.8s0-.5-.1-.8-.2-.5-.4-.6-.4-.3-.7-.4c-15.8-6.1-31.2-13.4-45.9-21.9-.3-.2-.5-.4-.7-.6s-.3-.6-.3-.9 0-.6.2-.9.3-.5.6-.7c3.1-2.3 6.2-4.7 9.1-7.1.3-.2.6-.4.9-.4s.7 0 1 .1c96.2 43.9 200.4 43.9 295.5 0 .3-.1.7-.2 1-.2s.7.2.9.4c2.9 2.4 6 4.9 9.1 7.2.2.2.4.4.6.7s.2.6.2.9-.1.6-.3.9-.4.5-.6.6c-14.7 8.6-30 15.9-45.9 21.8-.2.1-.5.2-.7.4s-.3.4-.4.7-.1.5-.1.8.1.5.2.8c8.8 17 18.8 33.3 30 48.8.2.3.6.6.9.7s.8.1 1.1 0c52.9-16.2 102.6-41.3 147.1-74.2.2-.2.4-.4.5-.6s.2-.5.2-.8c12.3-126.8-20.5-236.9-86.9-334.5zm-302 267.7c-29 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.4 59.2-52.8 59.2m195.4 0c-29 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.2 59.2-52.8 59.2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/UJACKING" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit", "content.tabs.link"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 96" role="img" aria-label="UJACKING">
+  <!--
+    Logotipo provisional tipo terminal.
+    PENDIENTE (TODO-UJACKING): sustituir por el logotipo oficial de la asociación.
+  -->
+  <rect x="2" y="2" width="316" height="92" rx="10" fill="#0a0e0a" stroke="#00ff9c" stroke-width="2"/>
+  <circle cx="24" cy="24" r="5" fill="#ff5f56"/>
+  <circle cx="42" cy="24" r="5" fill="#ffbd2e"/>
+  <circle cx="60" cy="24" r="5" fill="#27c93f"/>
+  <text x="26" y="70" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="34" font-weight="700" fill="#00ff9c">&gt;_</text>
+  <text x="92" y="70" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="34" font-weight="700" fill="#e6edf3" letter-spacing="2">UJACKING</text>
+</svg>

@@ -1,86 +1,77 @@
 /* ==========================================================================
-   UJACKING — hoja de estilos propia
-   Estética "terminal": fondo muy oscuro, acento verde, secundario cian.
-   Objetivo: buen contraste (WCAG AA) y buen aspecto en móvil.
+   UJACKING — estilos minimalistas
+   Menos adornos, más aire y una jerarquía clara.
+   Contraste pensado para cumplir WCAG AA en ambos modos.
    ========================================================================== */
 
 :root {
-  --uj-verde: #00ff9c;
-  --uj-verde-tenue: rgba(0, 255, 156, 0.25);
-  --uj-verde-suave: #7dffc4;
-  --uj-cian: #5cd1e5;
-  --uj-negro: #0a0e0a;
-  --uj-negro-2: #0d1117;
-  --uj-texto: #e6edf3;
+  --uj-verde: #00d68f;
+  --uj-verde-suave: #7cf0c0;
+  --uj-bg: #0b0f0d;
+  --uj-surface: #111815;
+  --uj-border: rgba(255, 255, 255, 0.09);
+  --uj-texto: #e8eef0;
+  --uj-muted: #a9b5b2;
 }
 
-/* --------------------------------------------------------------------------
-   Modo oscuro (esquema "slate"), que es el que se usa por defecto
-   -------------------------------------------------------------------------- */
+/* --- Modo oscuro (por defecto) ------------------------------------------- */
 [data-md-color-scheme="slate"] {
-  --md-default-bg-color: var(--uj-negro);
-  --md-default-fg-color: rgba(230, 237, 243, 0.92);
-  --md-default-fg-color--light: rgba(230, 237, 243, 0.72);
-  --md-default-fg-color--lighter: rgba(230, 237, 243, 0.45);
-  --md-default-fg-color--lightest: rgba(230, 237, 243, 0.12);
+  --md-default-bg-color: var(--uj-bg);
+  --md-default-fg-color: var(--uj-texto);
+  --md-default-fg-color--light: var(--uj-muted);
+  --md-default-fg-color--lighter: rgba(232, 238, 240, 0.45);
+  --md-default-fg-color--lightest: rgba(232, 238, 240, 0.10);
 
-  --md-primary-fg-color: #050705;
-  --md-primary-fg-color--light: #0d1117;
-  --md-primary-fg-color--dark: #000000;
+  --md-primary-fg-color: #0b0f0d;
+  --md-primary-fg-color--light: #111815;
+  --md-primary-fg-color--dark: #050806;
   --md-primary-bg-color: var(--uj-texto);
-  --md-primary-bg-color--light: rgba(230, 237, 243, 0.7);
+  --md-primary-bg-color--light: var(--uj-muted);
 
   --md-accent-fg-color: var(--uj-verde);
-  --md-accent-fg-color--transparent: rgba(0, 255, 156, 0.12);
-  --md-accent-bg-color: var(--uj-negro);
-  --md-accent-bg-color--light: var(--uj-negro-2);
+  --md-accent-fg-color--transparent: rgba(0, 214, 143, 0.10);
+  --md-accent-bg-color: var(--uj-bg);
 
   --md-typeset-a-color: var(--uj-verde-suave);
-  --md-code-bg-color: #0f1510;
-  --md-code-fg-color: #d7ffe9;
+  --md-code-bg-color: #0f1613;
+  --md-code-fg-color: #d8fff0;
 }
 
-/* --------------------------------------------------------------------------
-   Modo claro: mantiene el acento verde pero sobre fondo claro legible
-   -------------------------------------------------------------------------- */
+/* --- Modo claro ---------------------------------------------------------- */
 [data-md-color-scheme="default"] {
-  --md-primary-fg-color: #10160f;
-  --md-primary-fg-color--light: #1c241b;
-  --md-primary-fg-color--dark: #050705;
-  --md-primary-bg-color: #ffffff;
-  --md-accent-fg-color: #0a7a4d;
-  --md-typeset-a-color: #0a7a4d;
+  --md-primary-fg-color: #0f1512;
+  --md-primary-fg-color--light: #1b2420;
+  --md-primary-fg-color--dark: #050806;
+  --md-accent-fg-color: #087a52;
+  --md-typeset-a-color: #087a52;
 }
 
-/* --------------------------------------------------------------------------
-   Tipografía de código
-   -------------------------------------------------------------------------- */
+/* --- Tipografía ---------------------------------------------------------- */
+.md-typeset {
+  font-size: 0.8rem;
+  line-height: 1.7;
+}
+
 .md-typeset code,
 .md-typeset pre,
 .md-typeset kbd {
-  font-family: "JetBrains Mono", "Roboto Mono", ui-monospace, SFMono-Regular,
-    Menlo, Consolas, monospace;
+  font-family: "JetBrains Mono", "Roboto Mono", ui-monospace, monospace;
 }
 
-/* --------------------------------------------------------------------------
-   Bloques de código: borde verde tenue
-   -------------------------------------------------------------------------- */
-.md-typeset pre > code,
-.md-typeset .highlight {
-  border: 1px solid var(--uj-verde-tenue);
-  border-radius: 6px;
+/* Títulos: un poco más de aire, sin adornos */
+.md-typeset h1 {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.6rem;
 }
 
-.md-typeset .highlight {
-  background-color: #0f1510;
+.md-typeset h2 {
+  margin-top: 2.2rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid var(--uj-border);
 }
 
-/* --------------------------------------------------------------------------
-   Títulos con efecto "terminal" para las portadas
-   Se activa añadiendo {: .uj-terminal } al encabezado.
-   El prefijo es decorativo (aria-hidden vía contenido) y no rompe lectores
-   de pantalla porque el texto real del título permanece intacto.
-   -------------------------------------------------------------------------- */
+/* Prefijo "terminal" solo en la portada */
 .md-typeset .uj-terminal::before {
   content: "$ ";
   color: var(--uj-verde);
@@ -88,46 +79,117 @@
   font-weight: 400;
 }
 
-/* --------------------------------------------------------------------------
-   Pequeños adornos
-   -------------------------------------------------------------------------- */
-/* Barra superior ligeramente translúcida */
-.md-header {
-  border-bottom: 1px solid var(--uj-verde-tenue);
+/* --- Bloques de código --------------------------------------------------- */
+.md-typeset pre > code,
+.md-typeset .highlight {
+  border: 1px solid var(--uj-border);
+  border-radius: 8px;
 }
 
-/* Enlaces internos del menú lateral: acento verde en hover */
+/* --- Botones ------------------------------------------------------------- */
+.md-typeset .md-button {
+  border-radius: 8px;
+  border: 1px solid var(--uj-border);
+  padding: 0.5rem 1.1rem;
+  font-weight: 600;
+  transition: background-color 0.15s, border-color 0.15s;
+}
+
+.md-typeset .md-button:hover {
+  border-color: var(--uj-verde);
+}
+
+.md-typeset .md-button--primary {
+  background-color: var(--uj-verde);
+  border-color: var(--uj-verde);
+  color: #04120c;
+}
+
+.md-typeset .md-button--primary:hover {
+  background-color: var(--uj-verde-suave);
+  border-color: var(--uj-verde-suave);
+  color: #04120c;
+}
+
+/* --- Tarjetas (grid cards) ---------------------------------------------- */
+.md-typeset .grid.cards > ul > li {
+  background-color: var(--uj-surface);
+  border: 1px solid var(--uj-border);
+  border-radius: 12px;
+  padding: 1.3rem 1.4rem;
+  transition: border-color 0.15s, transform 0.15s;
+}
+
+.md-typeset .grid.cards > ul > li:hover {
+  border-color: var(--uj-verde);
+  transform: translateY(-2px);
+}
+
+.md-typeset .grid.cards > ul > li > p:last-child {
+  margin-bottom: 0;
+}
+
+/* Iconos grandes de las tarjetas */
+.md-typeset .grid.cards .lg {
+  font-size: 1.6rem;
+}
+
+.md-typeset .grid.cards .middle {
+  vertical-align: middle;
+  margin-right: 0.35rem;
+}
+
+/* --- Cabecera y navegación ---------------------------------------------- */
+.md-header {
+  border-bottom: 1px solid var(--uj-border);
+  box-shadow: none;
+}
+
+.md-tabs {
+  border-bottom: 1px solid var(--uj-border);
+}
+
 .md-nav__link:is(:focus, :hover) {
   color: var(--uj-verde);
 }
 
-/* Admonitions: cabecera con toque terminal */
+/* --- Admoniciones -------------------------------------------------------- */
 .md-typeset .admonition,
 .md-typeset details {
+  border-width: 1px;
   border-left-width: 3px;
-  border-radius: 6px;
+  border-radius: 8px;
+  box-shadow: none;
 }
 
-/* Tablas: cabecera destacada */
+/* --- Tablas -------------------------------------------------------------- */
 .md-typeset table:not([class]) th {
-  background-color: rgba(0, 255, 156, 0.08);
+  background-color: rgba(0, 214, 143, 0.06);
 }
 
-/* Citas / notas */
+.md-typeset table:not([class]) {
+  border: 1px solid var(--uj-border);
+  border-radius: 8px;
+}
+
+/* --- Citas --------------------------------------------------------------- */
 .md-typeset blockquote {
-  border-left: 3px solid var(--uj-verde-tenue);
+  border-left: 3px solid var(--uj-verde);
+  color: var(--uj-muted);
 }
 
-/* --------------------------------------------------------------------------
-   Móvil: reducir adornos que ocupan espacio
-   -------------------------------------------------------------------------- */
+/* --- Móvil --------------------------------------------------------------- */
 @media screen and (max-width: 44.9375em) {
-  .md-typeset .uj-terminal::before {
-    content: "$ ";
+  .md-typeset {
+    font-size: 0.78rem;
+  }
+
+  .md-typeset .grid.cards > ul > li {
+    padding: 1rem 1.1rem;
   }
 }
 
-/* Respeto por quienes prefieren menos movimiento */
+/* Menos movimiento si se prefiere */
 @media (prefers-reduced-motion: reduce) {
   * {
     animation: none !important;

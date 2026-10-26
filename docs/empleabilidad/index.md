@@ -1,33 +1,76 @@
-# Empleabilidad
+# Empleo
 
-Saber ciberseguridad no basta: hay que **saber demostrarlo** y saber buscarse la vida. Aquí reunimos
-todo lo que necesitas para pasar de "he aprendido mucho" a "me han llamado para una entrevista".
+Saber ciberseguridad no basta: hay que **saber demostrarlo**. Aquí tienes todo para pasar de
+"he aprendido mucho" a "me han llamado para una entrevista".
 
-## Contenido
+<div class="grid cards" markdown>
 
-| Página | Para qué sirve |
-| --- | --- |
-| [GitHub como portfolio](github-como-portfolio.md) | Convierte tu GitHub en una carta de presentación (y qué NO publicar). |
-| [Cómo hacer writeups](writeups.md) | Documenta máquinas y retos de forma que sumen en tu perfil. |
-| [CV de ciberseguridad](cv-de-ciberseguridad.md) | Estructura, palabras clave para el ATS y plantilla. |
-| [Perfil de LinkedIn](perfil-de-linkedin.md) | Optimiza tu perfil para que te encuentren. |
-| [Entrevistas](entrevistas.md) | Preguntas técnicas y de comportamiento, con respuestas modelo. |
-| [Portales de empleo](portales-de-empleo.md) | Dónde buscar ofertas (generalistas y especializados). |
-| [Prácticas y becas](practicas-y-becas.md) | Cómo entrar sin experiencia previa. |
+-   __GitHub como portfolio__
+
+    ---
+
+    Convierte tu perfil en una carta de presentación (y qué NO publicar).
+
+    [:octicons-arrow-right-24: Abrir](github-como-portfolio.md)
+
+-   __Cómo hacer writeups__
+
+    ---
+
+    Documenta máquinas y retos de forma que sumen.
+
+    [:octicons-arrow-right-24: Abrir](writeups.md)
+
+-   __CV de ciberseguridad__
+
+    ---
+
+    Estructura, palabras clave para el ATS y plantilla.
+
+    [:octicons-arrow-right-24: Abrir](cv-de-ciberseguridad.md)
+
+-   __Perfil de LinkedIn__
+
+    ---
+
+    Que los reclutadores te encuentren.
+
+    [:octicons-arrow-right-24: Abrir](perfil-de-linkedin.md)
+
+-   __Entrevistas__
+
+    ---
+
+    Preguntas técnicas y de comportamiento, con respuestas modelo.
+
+    [:octicons-arrow-right-24: Abrir](entrevistas.md)
+
+-   __Portales de empleo__
+
+    ---
+
+    Dónde buscar ofertas, generalistas y especializados.
+
+    [:octicons-arrow-right-24: Abrir](portales-de-empleo.md)
+
+-   __Prácticas y becas__
+
+    ---
+
+    Cómo entrar sin experiencia previa.
+
+    [:octicons-arrow-right-24: Abrir](practicas-y-becas.md)
+
+</div>
 
 ## La idea de fondo
 
-En ciberseguridad, **demostrar vale más que decir**. Tres cosas te diferencian de cientos de CVs
-iguales:
+En ciberseguridad, **demostrar vale más que decir**. Tres cosas te diferencian:
 
 1. **Práctica visible:** máquinas resueltas, CTFs, laboratorios propios.
 2. **Capacidad de explicar:** un *writeup* bien hecho demuestra que entiendes lo que hiciste.
 3. **Constancia:** un GitHub activo durante meses pesa más que un curso suelto.
 
 !!! warning "PENDIENTE (TODO-UJACKING)"
-    Las páginas de **[prácticas y becas](practicas-y-becas.md)** y los datos de plataformas
-    concretas necesitan que la asociación los complete con su experiencia real.
-
-## Siguiente paso
-
-Empieza por **[GitHub como portfolio](github-como-portfolio.md)**: es la base de todo lo demás.
+    Las páginas de **prácticas y becas** y los datos de plataformas concretas necesitan que la
+    asociación los complete con su experiencia real.

@@ -1,5 +1,5 @@
 site_name: UJACKING
-site_description: Recursos y guías gratuitas para aprender ciberseguridad desde cero. Por UJACKING.
+site_description: Aprende ciberseguridad desde cero, gratis y sin perderte.
 site_url: https://ujacking.github.io/
 repo_url: https://github.com/UJACKING/ujacking.github.io
 repo_name: UJACKING/ujacking.github.io
@@ -7,15 +7,14 @@ edit_uri: edit/main/docs/
 docs_dir: docs
 use_directory_urls: true
 
+# Navegación minimalista: 7 pestañas cortas.
+# "Inicio" agrupa la portada, la ruta de 12 semanas y el glosario.
 nav:
-  - Inicio: index.md
-  - Quiénes somos:
-      - quienes-somos/index.md
-      - Fines: quienes-somos/fines.md
-      - Contacto: quienes-somos/contacto.md
-      - Normas de comunidad: quienes-somos/normas-comunidad.md
-  - Ruta perfecta: ruta-perfecta.md
-  - Nivel 1 · Principiante:
+  - Inicio:
+      - index.md
+      - Ruta perfecta: ruta-perfecta.md
+      - Glosario: glosario.md
+  - Nivel 1:
       - nivel-1-principiante/index.md
       - 00 · Ética y legalidad: nivel-1-principiante/00-etica-y-legalidad.md
       - Arquitectura de ordenadores:
@@ -71,7 +70,7 @@ nav:
           - Otras plataformas: nivel-1-principiante/06-donde-practicar/06-otras-plataformas.md
       - Primer laboratorio: nivel-1-principiante/07-primer-laboratorio.md
       - Checklist y autoevaluación: nivel-1-principiante/08-checklist-y-autoevaluacion.md
-  - Nivel 2 · Medio:
+  - Nivel 2:
       - nivel-2-medio/index.md
       - Linux avanzado y escalada de privilegios: nivel-2-medio/01-linux-avanzado-y-privesc.md
       - Windows y Active Directory: nivel-2-medio/02-windows-y-active-directory.md
@@ -85,13 +84,13 @@ nav:
       - Criptografía aplicada: nivel-2-medio/10-criptografia-aplicada.md
       - Forense y OSINT: nivel-2-medio/11-forense-y-osint.md
       - Hardening básico: nivel-2-medio/12-hardening-basico.md
-  - Nivel 3 · Avanzado:
+  - Nivel 3:
       - nivel-3-avanzado/index.md
       - eJPT: nivel-3-avanzado/ejpt.md
       - CPTS: nivel-3-avanzado/cpts.md
       - OSCP: nivel-3-avanzado/oscp.md
       - Otras certificaciones: nivel-3-avanzado/otras-certificaciones.md
-  - Paths:
+  - Áreas:
       - paths/index.md
       - Pentesting web: paths/pentesting-web.md
       - Pentesting de infraestructura: paths/pentesting-de-infraestructura.md
@@ -108,7 +107,7 @@ nav:
       - Bug bounty: paths/bug-bounty.md
       - Seguridad móvil: paths/seguridad-movil.md
       - Hardware e IoT: paths/hardware-iot.md
-  - Empleabilidad:
+  - Empleo:
       - empleabilidad/index.md
       - GitHub como portfolio: empleabilidad/github-como-portfolio.md
       - Cómo hacer writeups: empleabilidad/writeups.md
@@ -117,9 +116,12 @@ nav:
       - Entrevistas: empleabilidad/entrevistas.md
       - Portales de empleo: empleabilidad/portales-de-empleo.md
       - Prácticas y becas: empleabilidad/practicas-y-becas.md
-  - Contribuir:
-      - contribuir/index.md
-  - Glosario: glosario.md
+  - Comunidad:
+      - quienes-somos/index.md
+      - Normas de comunidad: quienes-somos/normas-comunidad.md
+      - Contacto: quienes-somos/contacto.md
+      - Fines: quienes-somos/fines.md
+      - Contribuir: contribuir/index.md
 
 theme:
   name: material
@@ -143,15 +145,21 @@ theme:
         icon: material/weather-night
         name: Cambiar a modo oscuro
   features:
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.tracking
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.sections
     - navigation.indexes
+    - navigation.prune
+    - navigation.path
     - navigation.top
     - navigation.footer
     - toc.follow
     - search.suggest
     - search.highlight
+    - search.share
     - content.code.copy
     - content.action.edit
     - content.tabs.link
